@@ -7,3 +7,10 @@ pub use itertools::Itertools;
 pub use once_cell::sync::Lazy;
 pub use serde::{Deserialize, Serialize};
 // pub use lazy_static::lazy_static;
+#[cfg(test)]
+mod test {
+    pub use dotenv::dotenv;
+    pub use insta::assert_debug_snapshot;
+}
+#[cfg(test)]
+pub use test::*;

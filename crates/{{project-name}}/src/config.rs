@@ -22,4 +22,16 @@ pub struct Config {
 pub static CONFIG: Lazy<Config> = Lazy::new(|| envy::from_env().expect("some env vars missing"));
 
 #[cfg(test)]
-mod tests {}
+mod tests {
+    use crate::prelude::*;
+
+    use crate::CONFIG;
+    #[test]
+    fn show_config() {
+        dotenv().ok();
+        // for (key, value) in std::env::vars() {
+        //     println!("{} {}", key, value);
+        // }
+        assert_debug_snapshot!(*CONFIG);
+    }
+}
