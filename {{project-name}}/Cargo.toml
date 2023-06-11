@@ -2,7 +2,7 @@
 name = "{{project-name}}"
 authors.workspace = true
 edition.workspace = true
-homepage.workspace = true
+# homepage.workspace = true
 license.workspace = true
 readme.workspace = true
 repository.workspace = true
